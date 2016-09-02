@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteRule ^Halaman-utama.html$ index.php?page=home[L]
+RewriteRule ^Halaman-utama.html$ index.php?page=profile[L]
+RewriteRule ^Halaman-utama.html$ index.php?page=bukutamu[L]
+
+<IfModule mod_rewrite.c> 
+
+RewriteEngine On 
+ 
+RewriteRule ^/?([A-Za-z]+)/?$ salah.php?id=$1 [L] 
+
+</IfModule>

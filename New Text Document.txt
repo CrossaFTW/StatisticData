@@ -1,0 +1,26 @@
+<?php
+include "koneksi.php";
+
+
+$sql = "SELECT sum(produktivitas) FROM `produktivitas` WHERE tahun=2012";
+$result = mysql_query($sql);
+$row = mysql_fetch_array($result);
+	$ratarataP = $row[0];
+
+$sql = "SELECT sum(Nilai_TT) FROM `nilai_tt` WHERE tahun=2012";
+$result = mysql_query($sql);
+$row = mysql_fetch_array($result);
+	$ratarataNT = $row[0];
+
+$sql = "SELECT produktivitas FROM produktivitas WHERE tahun=2012";
+	$result = $conn->query($sql);
+	
+	if($result->num_rows > 0){
+		while($row = $result->fetch_assoc()){
+			$a = $row['produktivitas'];
+		}
+	}else{
+		echo "0 Result";
+	}
+	$conn->close();
+?>
